@@ -18,4 +18,4 @@ Spring Boot 根据博客上的知识，书上知识，视频知识，个人的�
  
 **示例代码**
 
-- [spring-boot-hello](https://github.com/ityouknow/spring-boot-examples/tree/master/spring-boot-hello)：Spring Boot 2.0  Hello World 示例
+- [spring-boot-hello](https://github.com/yurenmatou/SpringBoot2-SringBoot-learning-project/tree/master/spring-boot-hello)：Spring Boot 2.0  Hello World 示例
