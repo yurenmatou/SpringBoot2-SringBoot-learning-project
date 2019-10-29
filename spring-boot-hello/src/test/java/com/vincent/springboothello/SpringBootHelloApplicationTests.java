@@ -1,10 +1,10 @@
-package com.vincent.yurenmatou;
+package com.vincent.springboothello;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class YurenmatouApplicationTests {
+class SpringBootHelloApplicationTests {
 
     @Test
     void contextLoads() {
