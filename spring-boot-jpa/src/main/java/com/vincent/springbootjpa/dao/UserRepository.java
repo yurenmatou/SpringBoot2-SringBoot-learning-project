@@ -2,9 +2,11 @@ package com.vincent.springbootjpa.dao;
 
 import com.vincent.springbootjpa.bean.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Component;
 
-public abstract class UserRepolicy implements JpaRepository<User, Long> {
+
+public interface   UserRepository extends JpaRepository<User, Long> {
 
 
-    
+
 }
