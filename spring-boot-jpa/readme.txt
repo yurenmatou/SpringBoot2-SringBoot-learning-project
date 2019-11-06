@@ -12,7 +12,7 @@
 模糊查询 findByEmailLike
 忽略查询 findByUserNameIgnoreCase
 排序查询 findByUserNameOrderByEmailDesc
-具体的我放后面，因为太多了，参考网上
+具体的我放后面，因为太多了，参考网上https://www.sojson.com/blog/295.html
 
 
 二、简单的自定义查询
@@ -35,11 +35,14 @@ Sort     排序
 int page=1,size=2;
 Sort sort = new Sort(Sort.Direction.DESC, "id");
 Pageable pageable = PageRequest.of(page, size, sort);
+PageRequest.of 分页下标从0开始，size代表多少条
+
+另外一种方式实现分页，实现接口
 
 
 
 
-具体的关键字，使用方法和生产成SQL如下表所示
+SQL关键词想细介绍
 Keyword	                Sample	                                            JPQL snippet
 And	                    findByLastnameAndFirstname	                        … where x.lastname = ?1 and x.firstname = ?2
 Or	                    findByLastnameOrFirstname	                        … where x.lastname = ?1 or x.firstname = ?2

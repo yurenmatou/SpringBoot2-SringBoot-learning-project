@@ -9,8 +9,9 @@ import java.util.List;
 
 public interface UserService {
 
+    List<User> findAllUser();
 
-    public List<User> findAllUser();
-    public void saveUser(User user);
-    public User findUser(String userName);
+    void saveUser(User user);
+
+    User findUser(String userName);
 }

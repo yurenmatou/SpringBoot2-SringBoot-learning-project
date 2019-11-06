@@ -9,10 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.*;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
@@ -37,7 +34,7 @@ class SpringBootJpaApplicationTests {
     void contextLoads() {
     }
 
-//    @Test
+    //    @Test
     void saveAllUserDetail() {
         List<UserDetail> userDetails = new ArrayList<>(5);
         for (int i = 0; i < 5; i++) {
@@ -52,7 +49,7 @@ class SpringBootJpaApplicationTests {
         userDetailRepository.saveAll(userDetails);
     }
 
-//    @Test
+    @Test
     void findUserWithUserDetail() {
 //        System.out.println(userDetailRepository.findUser("这是一个测试1"));
 //        System.out.println(userDetailRepository.findUserWithUserDetail());
@@ -65,7 +62,7 @@ class SpringBootJpaApplicationTests {
         }
     }
 
-//    @Test
+    //    @Test
     void saveUser() {
         for (int i = 4; i < 7; i++) {
             User user1 = new User("小丽" + i, "123456", "10086" + i + "@qq.com", "兔斯基" + i, System.currentTimeMillis() + "");
@@ -73,7 +70,7 @@ class SpringBootJpaApplicationTests {
         }
     }
 
-//    @Test
+    //    @TestQ
     void findUser() {
         System.out.println(userService.findUser("小丽1"));
     }
@@ -81,17 +78,34 @@ class SpringBootJpaApplicationTests {
     @Test
     void findUserPager() {
         Sort orders = Sort.by(Sort.Direction.DESC, "id");
-        Pageable pageable = PageRequest.of(1, 10);
+        Pageable pageable = PageRequest.of(0, 10, orders);
+        List<User> userList = repository.findAll();
+        for (int i = 0; i < userList.size(); i++) {
+            System.out.println(userList.get(i).getUserName());
+        }
 
+        Page<User> userPage0 = repository.findUserLists(pageable);
+        Page<User> userPage = repository.findByNickName("aa", pageable);
+        List<User> userList1 = userPage.getContent();
+        List<User> userList2 = userPage0.getContent();
 
-//        Page<User> userPage = repository.findByNickName("",pageable);
-        Page<User> userPage = repository.findALL(pageable);
-        List<User> userList = userPage.getContent();
-
-        System.out.println("阿说法手机散发="+userList.size());
         for (int i = 0; i < userPage.getContent().size(); i++) {
             System.out.println(userPage.getContent().get(i).getUserName());
         }
+
+        User user = repository.findByUserNameOrEmail("aa", "aa@126.com");
+        User user2 = repository.findByUserName("aa");
+        Page<User> userPage2 = repository.findRoomUidsByIdPageable(1, pageable);
+//        User user2 = repository.findFirstByOrderByUsernameAsc();
+        Page<User> userPage3 = repository.queryFirst10ById(1, pageable);
+        Slice<User> userPage4 = repository.findTop3ById(1, pageable);
+        List<User> userPage5 = repository.findFirst10ById(1, orders);
+        List<User> userPage6 = repository.findTop10ById(1, pageable);
+        Page<User> userPage7 = repository.findByUsername("aa", pageable);
+        Slice<User> userPage8 = repository.findByUserNameAndEmail("aa", "aa@126.com", pageable);
+        User user3 = repository.findByEmail("aa@126.com");
+        int modifyById = repository.modifyById("cc",3L);
+        repository.deleteById(1L);
     }
 
 }
