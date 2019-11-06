@@ -1,0 +1,7 @@
+介绍开机启动
+分别是ApplicationRunner和CommandLineRunner接口类
+1、其他子类可以继承它，实现方法
+2、默认是CommandLineRunner仅次于ApplicationRunner执行
+3、@Order可以指定优先顺序
+
+

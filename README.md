@@ -22,3 +22,5 @@ Spring Boot 根据博客上的知识，书上知识，视频知识，个人的�
 - [spring-boot-email](https://github.com/yurenmatou/SpringBoot2-SringBoot-learning-project/tree/master/spring-boot-email)：Spring Boot 2.0  Web开发 示例
 - [spring-boot-scheduler](https://github.com/yurenmatou/SpringBoot2-SringBoot-learning-project/tree/master/spring-boot-scheduler)：Spring Boot 2.0  定时任务 示例
 - [spring-boot-jpa](https://github.com/yurenmatou/SpringBoot2-SringBoot-learning-project/tree/master/spring-boot-jpa)：Spring Boot 2.0  Jpa的简单使用 示例
+- [spring-boot-multi-jpa](https://github.com/yurenmatou/SpringBoot2-SringBoot-learning-project/tree/master/spring-boot-multi-jpa)：Spring Boot 2.0  Jpa多数据源 示例
+- [spring-boot-startrunner](https://github.com/yurenmatou/SpringBoot2-SringBoot-learning-project/tree/master/spring-boot-startrunner)：Spring Boot 2.0  开机启动 示例
