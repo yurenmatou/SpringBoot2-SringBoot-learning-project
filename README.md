@@ -24,3 +24,5 @@ Spring Boot 根据博客上的知识，书上知识，视频知识，个人的�
 - [spring-boot-jpa](https://github.com/yurenmatou/SpringBoot2-SringBoot-learning-project/tree/master/spring-boot-jpa)：Spring Boot 2.0  Jpa的简单使用 示例
 - [spring-boot-multi-jpa](https://github.com/yurenmatou/SpringBoot2-SringBoot-learning-project/tree/master/spring-boot-multi-jpa)：Spring Boot 2.0  Jpa多数据源 示例
 - [spring-boot-startrunner](https://github.com/yurenmatou/SpringBoot2-SringBoot-learning-project/tree/master/spring-boot-startrunner)：Spring Boot 2.0  开机启动 示例
+- [spring-boot-web](https://github.com/yurenmatou/SpringBoot2-SringBoot-learning-project/tree/master/spring-boot-web)：Spring Boot 2.0  自定义Filter 示例
+- [spring-boot-mybatis](https://github.com/yurenmatou/SpringBoot2-SringBoot-learning-project/tree/master/spring-boot-mybatis)：Spring Boot 2.0  如何使用Mybatis
