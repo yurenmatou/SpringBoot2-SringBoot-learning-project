@@ -1,6 +1,7 @@
 package com.vincent.springbootmybatis.model;
 
 import com.vincent.springbootmybatis.bean.User;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
