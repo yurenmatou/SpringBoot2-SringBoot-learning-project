@@ -1,9 +1,8 @@
 package com.vincent.springbootmybatis.model;
 
 
-
 public class User {
-
+    private static final long serialVersionUID = 1L;
 
     public long id;
     public String userName;
@@ -11,10 +10,23 @@ public class User {
     public String passWord;
     public UserSexEnum userSex;
 
+    public User() {
+        super();
+    }
+
     public User(String userName, String passWord, UserSexEnum userSex) {
+        super();
         this.userName = userName;
         this.passWord = passWord;
         this.userSex = userSex;
+    }
+
+    public User(String userName, String passWord, UserSexEnum userSex, long id) {
+        super();
+        this.userName = userName;
+        this.passWord = passWord;
+        this.userSex = userSex;
+        this.id = id;
     }
 
     public long getId() {

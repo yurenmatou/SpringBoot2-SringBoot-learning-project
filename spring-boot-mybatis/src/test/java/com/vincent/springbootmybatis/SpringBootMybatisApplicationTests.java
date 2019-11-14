@@ -23,13 +23,39 @@ class SpringBootMybatisApplicationTests {
 
 
     @Test
-    void test() {
-        List<User> userList = userMapper.getAllEntity();
+    void insert() {
+        userMapper.insert(new User("aa", "123456", UserSexEnum.MAN));
+        userMapper.insert(new User("bb", "123456", UserSexEnum.WOMAN));
+        userMapper.insert(new User("cc", "123456", UserSexEnum.MAN));
+    }
+
+    @Test
+    void select() {
+        List<User> userList = userMapper.getAll();
         for (int i = 0; i < userList.size(); i++) {
-            System.out.println("name--" + userList.get(i).nickName);
+            System.out.println("name--" + userList.get(i).userName);
         }
-        System.out.println("deleteid=" + userMapper.delete(1L));
-        userMapper.insert(new User("aa","123456", UserSexEnum.NAN));
+    }
+
+    @Test
+    void getOne() {
+        User user = userMapper.getOne(5L);
+        if (null != user) {
+            System.out.println(user.userName);
+        }
+    }
+
+    @Test
+    void update() {
+        User user = new User("bb", "123456", UserSexEnum.WOMAN, 11);
+        int count = userMapper.update(user);
+        System.out.println("更新数据条数：" + count);
+    }
+
+    @Test
+    void delete() {
+        int count = userMapper.delete(11L);
+        System.out.println("删除数据条数：" + count);
     }
 
 }
