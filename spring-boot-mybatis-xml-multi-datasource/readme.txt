@@ -16,3 +16,16 @@ spring.datasource.xxx.driver-class-name=com.mysql.cj.jdbc.Driver
 DataSourceTransactionManager
 SqlSessionFactory
 SqlSessionTemplate
+
+
+4、与xml方式不同的是，需要指定PathMatchingResourcePatternResolver
+
+例子如下：
+ @Bean(name = "test1SqlSessionFactory")
+    @Primary
+    public SqlSessionFactory getSqlSessionFactory(@Qualifier("test1DataSource") DataSource dataSource) throws Exception {
+        SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
+        bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResource("classpath:mybatis/mapper/test1/*.xml"));
+        bean.setDataSource(dataSource);
+        return bean.getObject();
+    }

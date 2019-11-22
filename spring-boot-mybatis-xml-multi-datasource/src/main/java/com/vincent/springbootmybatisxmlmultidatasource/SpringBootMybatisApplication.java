@@ -1,13 +1,14 @@
-package com.vincent.springbootmybatismultixml;
+package com.vincent.springbootmybatisxmlmultidatasource;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringBootMybatisMultiXmlApplication {
+public class SpringBootMybatisApplication {
+
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootMybatisMultiXmlApplication.class, args);
+        SpringApplication.run(SpringBootMybatisApplication.class, args);
     }
 
 }
