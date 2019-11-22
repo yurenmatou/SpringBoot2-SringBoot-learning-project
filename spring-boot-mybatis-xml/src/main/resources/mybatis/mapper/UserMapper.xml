@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.vincent.springbootmybatisxml.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.vincent.springbootmybatisxml.model.User">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="userName" property="userName" jdbcType="VARCHAR"/>
+        <result column="nickName" property="nickName" jdbcType="VARCHAR"/>
+        <result column="passWord" property="passWord" jdbcType="VARCHAR"/>
+        <result column="user_sex" property="userSex" javaType="com.vincent.springbootmybatisxml.model.UserSexEnum"/>
+    </resultMap>
+
+    <sql id="BASE_LIST_COLUMN">
+        id, userName, passWord, user_sex, nickName
+    </sql>
+
+    <select id="getAll" resultMap="BaseResultMap">
+        select
+        <include refid="BASE_LIST_COLUMN"/>
+        from user
+    </select>
+
+    <select id="getUser" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="BASE_LIST_COLUMN"/>
+        from user where id = #{id}
+    </select>
+
+    <insert id="insertUser" parameterType="com.vincent.springbootmybatisxml.model.User">
+        insert into user(userName,passWord,user_sex) values(#{userName},#{passWord},#{userSex})
+    </insert>
+
+    <update id="updateUser" parameterType="com.vincent.springbootmybatisxml.model.User">
+        update
+        user
+        set
+        <if test="userName != null">userName=#{userName},</if>
+        userName=#{userName},passWord=#{passWord}
+        where
+        id=#{id}
+    </update>
+
+    <delete id="deleteUser" parameterType="com.vincent.springbootmybatisxml.model.User">
+        delete from user where id = #{id} and userName=#{userName}
+    </delete>
+
+</mapper>

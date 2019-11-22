@@ -1,32 +1,18 @@
 package com.vincent.springbootmybatisxml.mapper;
 
 import com.vincent.springbootmybatisxml.model.User;
-import com.vincent.springbootmybatisxml.model.UserSexEnum;
-import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
 public interface UserMapper {
-    @Select("SELECT * FROM user")
-    @Results({
-            @Result(property = "userSex",  column = "user_sex", javaType = UserSexEnum.class),
-            @Result(property = "nickName", column = "nick_name")
-    })
+
     List<User> getAll();
 
-    @Select("SELECT * FROM user WHERE id = #{id}")
-    @Results({
-            @Result(property = "userSex",  column = "user_sex", javaType = UserSexEnum.class),
-            @Result(property = "nickName", column = "nick_name")
-    })
-    User getOne(Long id);
+    User getUser(long id);
 
-    @Insert("INSERT INTO user(userName,passWord,user_sex) VALUES(#{userName}, #{passWord}, #{userSex})")
-    int insert(User user);
+    int insertUser(User user);
 
-    @Update("UPDATE user SET userName=#{userName},nickName=#{nickName} WHERE id =#{id}")
-    int update(User user);
+    int updateUser(User user);
 
-    @Delete("DELETE FROM user WHERE id =#{id}")
-    int delete(Long id);
+    int deleteUser(User user);
 }

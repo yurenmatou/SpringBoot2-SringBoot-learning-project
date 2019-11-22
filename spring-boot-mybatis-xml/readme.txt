@@ -9,11 +9,7 @@
 
 2、入库程序SpringBootMybatisApplication，头部添加@MapperScan("com.vincent.springbootmybatis.model") ，这个就是所有的都会被扫描进去，省去单独加注解@Mapper
 
-3、方法上加上注解@Select("select * from user") 进行查询
-
-4、其他的查询你们自行脑补啦
-
-5、@Param 单个参数时可以不用，多个参数时加该注解
+3、
 
 SQL表的建立
 
