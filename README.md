@@ -30,3 +30,4 @@ Spring Boot 根据博客上的知识，书上知识，视频知识，个人的�
 - [spring-boot-mybatis-xml](https://github.com/yurenmatou/SpringBoot2-SringBoot-learning-project/tree/master/spring-boot-mybatis-xml)：Spring Boot 2.0  如何使用Mybatis XML方式 示例
 - [spring-boot-mybatis-xml-multi-datasource](https://github.com/yurenmatou/SpringBoot2-SringBoot-learning-project/tree/master/spring-boot-mybatis-xml-multi-datasource)：Spring Boot 2.0  如何使用Mybatis XML方式多数据源 示例
 - [spring-boot-mongo](https://github.com/yurenmatou/SpringBoot2-SringBoot-learning-project/tree/master/spring-boot-mongo)：Spring Boot 2.0  如何使用MongoDB  示例
+- [psring-boot-jdbc-multidatasoure](https://github.com/yurenmatou/SpringBoot2-SringBoot-learning-project/tree/master/psring-boot-jdbc-multidatasoure)：Spring Boot 2.0  如何使用 JdbcTemplate多数据源  示例
