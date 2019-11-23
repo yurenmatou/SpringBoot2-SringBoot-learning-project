@@ -1,7 +1,9 @@
 配置如下：
-spring.application.name=spring-boot-mongodb
+spring.application.name=spring-boot-mongo
 
-spring.data.mongodb.uri=mongodb://192.168.0.75:20000/test
+spring.data.mongodb.uri=mongodb://localhost:27017/springboot-db
+
+
 
 增删改查
 MongoTemplate mongoTemplate;
