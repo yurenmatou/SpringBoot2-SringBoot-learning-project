@@ -51,6 +51,12 @@ public class DataSourceConfig {
         return DataSourceBuilder.create().build();
     }
 
+    @Bean(name = "ddddd")
+    @ConfigurationProperties("spring.datasource.ddddd")
+    public DataSource ddddd() {
+        return DataSourceBuilder.create().build();
+    }
+
     @Bean(name = "vendorProperties")
     public Map<String, Object> getVendorProperties() {
         return hibernateProperties.determineHibernateProperties(jpaProperties.getProperties(), new HibernateSettings());
