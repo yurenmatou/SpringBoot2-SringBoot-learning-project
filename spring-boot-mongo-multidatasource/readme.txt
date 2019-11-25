@@ -1,24 +1,29 @@
 配置如下：
 spring.application.name=spring-boot-mongo
 
-mongodb.primary.uri=mongodb://localhost:27017/springboot-db
+mongodb.primary.uri=mongodb://localhost:27017
 mongodb.primary.database=primary
-mongodb.secondary.uri=mongodb://localhost:27017/springboot-db
+mongodb.secondary.uri=mongodb://localhost:27017
 mongodb.secondary.database=secondary
 
-增删改查
-MongoTemplate mongoTemplate;
 
-mongoTemplate.findAll(com.vincent.springbootmongo.model.User.class);
+1、提供MongoProperties，添加@ConfigurationProperties(prefix = "mongodb")
 
-Query query = new Query(Criteria.where("userName").is(userName));
-mongoTemplate.findOne(query, User.class);
+2、提供配置类MultipleMongoConfig，MongoDbFactory（MongoClient构建），MongoTemplate
 
-Query query = new Query(Criteria.where("id").is(user.getId()));
-Update update = new Update().set("userName",user.getUserName()).addToSet("newUserName",user.getUserName());
-mongoTemplate.updateFirst(query, update, User.class).getMatchedCount();
+3、配置第一个数据源
+@Configuration
+@EnableConfigurationProperties(MultipleMongoProperties.class)
+@EnableMongoRepositories(basePackages = "com.vincent.springbootmongomultidatasource.repository.test1",
+mongoTemplateRef = "primaryMongoTemplate")
 
-mongoTemplate.save(user);
 
-Query query = new Query(Criteria.where("id").is(id));
-mongoTemplate.remove(query, User.class).getDeletedCount();
+记得安装mongodb，启动MongoDB Server
+
+
+/**
+ * Bean注解，没有写时，默认方法的名称
+ * Qualifier注解 ，指向Bean的Bean声明的name值，一个方法或者对象
+ * @return
+ * @throws Exception
+ */

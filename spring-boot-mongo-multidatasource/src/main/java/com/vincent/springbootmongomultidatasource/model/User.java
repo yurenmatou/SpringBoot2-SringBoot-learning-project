@@ -3,13 +3,23 @@ package com.vincent.springbootmongomultidatasource.model;
 import java.io.Serializable;
 
 public class User implements Serializable {
-
-//    serialVersionUID
-
+    private static final long serialVersionUID = -3258839839160856613L;
+    private String  id;
     private String userName;
-    private long id;
-    private String nickName;
     private String passWord;
+
+    public User(String userName, String passWord) {
+        this.userName = userName;
+        this.passWord = passWord;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getUserName() {
         return userName;
@@ -17,22 +27,6 @@ public class User implements Serializable {
 
     public void setUserName(String userName) {
         this.userName = userName;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getNickName() {
-        return nickName;
-    }
-
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
     }
 
     public String getPassWord() {
@@ -46,9 +40,8 @@ public class User implements Serializable {
     @Override
     public String toString() {
         return "User{" +
-                "userName='" + userName + '\'' +
-                ", id=" + id +
-                ", nickName='" + nickName + '\'' +
+                "id='" + id + '\'' +
+                ", userName='" + userName + '\'' +
                 ", passWord='" + passWord + '\'' +
                 '}';
     }

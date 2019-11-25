@@ -21,3 +21,6 @@ mongoTemplate.save(user);
 
 Query query = new Query(Criteria.where("id").is(id));
 mongoTemplate.remove(query, User.class).getDeletedCount();
+
+
+记得安装mongodb，启动MongoDB Server
