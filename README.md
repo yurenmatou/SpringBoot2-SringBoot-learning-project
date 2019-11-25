@@ -33,3 +33,4 @@ Spring Boot 根据博客上的知识，书上知识，视频知识，个人的�
 - [spring-boot-mongo-multidatasource](https://github.com/yurenmatou/SpringBoot2-SringBoot-learning-project/tree/master/spring-boot-mongo-multidatasource)：Spring Boot 2.0  如何使用MongoDB 多数据源  示例
 - [spsring-boot-jdbc-multidatasoure](https://github.com/yurenmatou/SpringBoot2-SringBoot-learning-project/tree/master/spsring-boot-jdbc-multidatasoure)：Spring Boot 2.0  如何使用 JdbcTemplate多数据源  示例
 - [spring-boot-redis](https://github.com/yurenmatou/SpringBoot2-SringBoot-learning-project/tree/master/spring-boot-redis)：Spring Boot 2.0  如何使用 Redis  示例
+- [spring-boot-rabbitmq](https://github.com/yurenmatou/SpringBoot2-SringBoot-learning-project/tree/master/spring-boot-rabbitmq)：Spring Boot 2.0  如何使用 RabbitMQ  示例
